@@ -1,8 +1,166 @@
-<p>Hello 大家好</p>
-<p>我是杨大伟，这是我的个人网站。 </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的编程世界</title>
+    <!-- 引入必要的CSS框架和字体 -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="transition-colors duration-200" style="--bg-secondary-rgb: 19, 47, 76;">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 w-full backdrop-filter backdrop-blur-lg z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-bold" data-i18n="nav.brand">杨大伟</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-500 transition" data-i18n="nav.home">首页</a>
+                    <a href="#skills" class="hover:text-blue-500 transition" data-i18n="nav.skills">技能</a>
+                    <a href="#projects" class="hover:text-blue-500 transition" data-i18n="nav.projects">项目</a>
+                    <a href="#contact" class="hover:text-blue-500 transition" data-i18n="nav.contact">联系我</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="lang-toggle" class="p-2 rounded-full hover:bg-gray-700">
+                        <span class="lang-text">EN</span>
+                    </button>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-700">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<ul>
-  <li> <a href="https://www.zhihu.com/people/AJLoveChina">知乎</a> </li>
-  <li> <a href="http://hejie.nigeerhuo.com">我的博客(已经不更细了,现在在知乎写文章)</a> </li>
-</ul>
+    <!-- 主页内容区 -->
+    <section id="home" class="min-h-screen flex items-center justify-center">
+        <div class="container mx-auto px-6 py-24 text-center">
+            <h1 class="text-5xl font-bold mb-8 animate-fade-in main-title" data-i18n="home.title">
+                欢迎来到我的编程世界
+            </h1>
+            <div class="flex justify-center mb-8">
+                <img src="imgs/xiaomi_1.png" alt="小米汽车" class="w-48 h-48 rounded-full shadow-lg object-cover">
+            </div>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-i18n="home.subtitle">
+                热爱编程的全栈开发者，专注于创建优雅且高效的web应用
+            </p>
+        </div>
+    </section>
+
+    <!-- 技能展示区 -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16" data-i18n="skills.title">技术栈</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- 技能卡片示例 -->
+                <div class="skill-card">
+                    <i class="fab fa-js text-4xl text-yellow-400"></i>
+                    <h3 class="text-xl mt-4">JavaScript</h3>
+                    <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                        <div class="bg-yellow-400 h-2.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                <!-- 添加更多技能卡片 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目经验区 -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16" data-i18n="projects.title">项目展示</h2>
+            
+            <!-- 添加轮播组件 -->
+            <div class="carousel relative max-w-4xl mx-auto mb-16">
+                <div class="carousel-container overflow-hidden relative">
+                    <div class="carousel-track flex transition-transform duration-500">
+                        <div class="carousel-slide min-w-full">
+                            <img src="imgs/xiaomi_1.png" alt="小米汽车1" class="w-full h-96 object-cover rounded-lg">
+                        </div>
+                        <div class="carousel-slide min-w-full">
+                            <img src="imgs/xiaomi_2.png" alt="小米汽车2" class="w-full h-96 object-cover rounded-lg">
+                        </div>
+                    </div>
+                </div>
+                <!-- 轮播控制按钮 -->
+                <button class="carousel-btn prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-r">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-l">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <!-- 轮播指示器 -->
+                <div class="carousel-indicators flex justify-center mt-4 space-x-2">
+                    <!-- 指示器点会通过JavaScript动态生成 -->
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 项目卡片示例 -->
+                <div class="project-card rounded-lg p-6 hover:transform hover:scale-105 transition">
+                    <h3 class="text-xl font-bold mb-4">项目名称</h3>
+                    <p class="mb-4">项目描述...</p>
+                    <div class="flex space-x-2">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                    </div>
+                    <div class="mt-4">
+                        <a href="#" class="text-blue-500 hover:text-blue-400">
+                            <i class="fab fa-github mr-2"></i>查看源码
+                        </a>
+                    </div>
+                </div>
+                <!-- 添加更多项目卡片 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- AI聊天界面 -->
+    <div id="chat-container" class="fixed bottom-0 right-0 m-4 w-96 rounded-t-lg shadow-lg">
+        <div class="chat-header">
+            <h3 class="font-bold" data-i18n="chat.title">与AI助手对话</h3>
+            <button class="fold-btn hover:opacity-80 transition">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="chat-messages h-96 p-4 overflow-y-auto">
+            <div class="chat-message ai-message">
+                你好！我是你的AI助手，有什么我可以帮你的吗？
+            </div>
+        </div>
+        <div class="chat-input p-4 border-t border-opacity-20">
+            <div class="flex space-x-2">
+                <input type="text" 
+                       class="flex-1 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                       data-i18n="chat.placeholder"
+                       placeholder="输入消息...">
+                <button class="send-btn p-2 rounded-full bg-peacock-primary hover:bg-peacock-secondary transition">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚社交链接 -->
+    <footer class="py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center space-x-8">
+                <a href="https://github.com" class="social-link">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="https://linkedin.com" class="social-link">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="https://twitter.com" class="social-link">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入必要的JavaScript -->
+    <script src="translations.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
