@@ -24,14 +24,14 @@ themeToggle.addEventListener('click', () => {
 
 // 聊天功能增强
 const chatContainer = document.getElementById('chat-container');
-const chatHeader = chatContainer.querySelector('.chat-header');
+const foldButton = chatContainer.querySelector('.fold-btn');
 const chatMessages = chatContainer.querySelector('.chat-messages');
 const chatInput = chatContainer.querySelector('input');
 const sendButton = chatContainer.querySelector('.send-btn');
-const foldButton = chatContainer.querySelector('.fold-btn');
 
 // 折叠/展开聊天框
-chatHeader.addEventListener('click', () => {
+foldButton.addEventListener('click', (e) => {
+    e.stopPropagation();
     chatContainer.classList.toggle('folded');
 });
 

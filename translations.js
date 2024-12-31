@@ -20,6 +20,9 @@ const translations = {
         chat: {
             title: "与AI助手对话",
             placeholder: "输入消息..."
+        },
+        contact: {
+            title: "联系方式"
         }
     },
     en: {
@@ -43,6 +46,9 @@ const translations = {
         chat: {
             title: "Chat with AI Assistant",
             placeholder: "Type a message..."
+        },
+        contact: {
+            title: "Contact Me"
         }
     }
 }; 
